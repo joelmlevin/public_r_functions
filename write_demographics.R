@@ -10,3 +10,5 @@ write_demographics <- function(data) {
          "% female; age: M = ", round(mean(data$age), 2), 
          " years, SD = ", round(sd(data$age), 2), ")...")
 }
+
+# test
