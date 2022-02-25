@@ -50,8 +50,6 @@ corstars <-function(x, method=c("pearson", "spearman"), removeTriangle=c("upper"
   }
 } 
 
-ifelse(p < .0001, "****", ifelse(p < .001, "*** ", ifelse(p < .01, "**  ", ifelse(p < .05, "*   ", "    "))))
-
 print.corstars.stars <- function () {
   print("p < .0001 = ****, p < .001 = ***, p < .01 = **, p < .05 = *")
 }
