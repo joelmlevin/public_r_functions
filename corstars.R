@@ -9,7 +9,7 @@
 corstars <-function(x, method=c("pearson", "spearman"), removeTriangle=c("upper", "lower"),
                     result=c("none", "html", "latex")){
   #Compute correlation matrix
-#  require(Hmisc)
+  require(Hmisc)
   x <- as.matrix(x)
   correlation_matrix<-rcorr(x, type=method[1])
   R <- correlation_matrix$r # Matrix of correlation coeficients
@@ -49,3 +49,10 @@ corstars <-function(x, method=c("pearson", "spearman"), removeTriangle=c("upper"
     else print(xtable(Rnew), type="latex") 
   }
 } 
+
+ifelse(p < .0001, "****", ifelse(p < .001, "*** ", ifelse(p < .01, "**  ", ifelse(p < .05, "*   ", "    "))))
+
+print.corstars.stars <- function () {
+  print("p < .0001 = ****, p < .001 = ***, p < .01 = **, p < .05 = *")
+}
+  
