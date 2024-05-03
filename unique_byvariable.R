@@ -3,5 +3,6 @@
 unique_byvariable <- function(data, # a dataframe
                               variables) { # a character vector of variable names
     map(variables,
-        function(x) {data %>% group_by(value = .[[x]]) %>% count()})
+        function(x) {data %>% group_by(value = .[[x]]) %>% count()}) %>%
+        setNames(variables)
 }
